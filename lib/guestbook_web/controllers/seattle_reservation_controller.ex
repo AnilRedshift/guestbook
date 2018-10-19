@@ -6,6 +6,11 @@ defmodule GuestbookWeb.SeattleReservationController do
 
   action_fallback GuestbookWeb.FallbackController
 
+  def index(conn, %{"user" => user_id}) do 
+    seattle_reservation = Reservations.find_seattle_reservation!(user_id)
+    render(conn, "show.json", seattle_reservation: seattle_reservation)
+  end
+
   def index(conn, _params) do
     seattlereservations = Reservations.list_seattlereservations()
     render(conn, "index.json", seattlereservations: seattlereservations)

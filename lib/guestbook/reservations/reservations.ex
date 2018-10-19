@@ -21,6 +21,8 @@ defmodule Guestbook.Reservations do
     Repo.all(SeattleReservation)
   end
 
+  def find_seattle_reservation!(user_id), do: Repo.get_by!(SeattleReservation, user_id: user_id)
+
   @doc """
   Gets a single seattle_reservation.
 

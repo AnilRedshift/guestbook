@@ -12,6 +12,6 @@ defmodule Guestbook.Repo.Migrations.CreateSeattlereservations do
       timestamps()
     end
 
-    create index(:seattlereservations, [:user_id])
+    create unique_index(:seattlereservations, [:user_id])
   end
 end
