@@ -11,7 +11,10 @@ defmodule GuestbookWeb.UserView do
   end
 
   def render("user.json", %{user: user}) do
-    %{id: user.id,
-      name: user.name}
+    %{
+      id: user.id,
+      name: user.name,
+      display_name: user.display_name,
+    }
   end
 end

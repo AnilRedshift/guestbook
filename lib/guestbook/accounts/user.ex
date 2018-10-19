@@ -5,6 +5,7 @@ defmodule Guestbook.Accounts.User do
 
   schema "users" do
     field :name, :string
+    field :display_name, :string
 
     timestamps()
   end
@@ -12,7 +13,8 @@ defmodule Guestbook.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :display_name])
+    |> validate_required([:name, :display_name])
+    |> unique_constraint(:name)
   end
 end
