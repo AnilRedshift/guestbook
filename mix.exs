@@ -36,6 +36,7 @@ defmodule Guestbook.Mixfile do
       {:phoenix, "~> 1.3.4"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
+      {:cors_plug, "~> 1.5"},
       {:cowboy, "~> 1.0"}
     ]
   end
