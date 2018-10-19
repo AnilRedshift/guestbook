@@ -5,7 +5,8 @@ defmodule GuestbookWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", GuestbookWeb do
+  scope "/", GuestbookWeb do
     pipe_through :api
+    resources "/users", UserController, except: [:new, :edit]
   end
 end
