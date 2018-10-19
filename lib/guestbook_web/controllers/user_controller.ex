@@ -6,6 +6,11 @@ defmodule GuestbookWeb.UserController do
 
   action_fallback GuestbookWeb.FallbackController
 
+  def index(conn, %{"name" => name}) do
+    user = Accounts.find_user!(name)
+    render(conn, "show.json", user: user)
+  end
+
   def index(conn, _params) do
     users = Accounts.list_users()
     render(conn, "index.json", users: users)
@@ -24,6 +29,7 @@ defmodule GuestbookWeb.UserController do
     user = Accounts.get_user!(id)
     render(conn, "show.json", user: user)
   end
+
 
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Accounts.get_user!(id)

@@ -21,6 +21,8 @@ defmodule Guestbook.Accounts do
     Repo.all(User)
   end
 
+  def find_user!(name), do: Repo.get_by!(User, name: name)
+
   @doc """
   Gets a single user.
 
