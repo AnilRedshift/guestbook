@@ -6,6 +6,7 @@ defmodule Guestbook.Accounts.User do
   schema "users" do
     field :name, :string
     field :display_name, :string
+    has_one :seattle_reservation, SeattleReservation
 
     timestamps()
   end
