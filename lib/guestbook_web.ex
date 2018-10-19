@@ -22,7 +22,6 @@ defmodule GuestbookWeb do
       use Phoenix.Controller, namespace: GuestbookWeb
       import Plug.Conn
       import GuestbookWeb.Router.Helpers
-      import GuestbookWeb.Gettext
     end
   end
 
@@ -36,7 +35,6 @@ defmodule GuestbookWeb do
 
       import GuestbookWeb.Router.Helpers
       import GuestbookWeb.ErrorHelpers
-      import GuestbookWeb.Gettext
     end
   end
 
@@ -51,7 +49,6 @@ defmodule GuestbookWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import GuestbookWeb.Gettext
     end
   end
 
