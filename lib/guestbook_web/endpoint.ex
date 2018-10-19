@@ -17,6 +17,8 @@ defmodule GuestbookWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
+
+  plug CORSPlug, origin: ["https://anilandstina.club", "https://www.anilandstina.club", "http://localhost:3000"]
   plug GuestbookWeb.Router
 
   @doc """

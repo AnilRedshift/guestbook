@@ -3,7 +3,6 @@ defmodule GuestbookWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug CORSPlug, origin: ["https://anilandstina.club", "https://www.anilandstina.club"]
   end
 
   scope "/", GuestbookWeb do
